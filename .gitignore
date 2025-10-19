@@ -1,0 +1,15 @@
+# Ignore datasets
+src/data/
+data/
+models/
+venv/
+
+# Python cache
+__pycache__/
+
+# PyTorch models
+*.pth
+*.pt
+
+# OS files
+.DS_Store
