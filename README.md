@@ -1,59 +1,41 @@
-🧠 ResNet50 Image Classification (PyTorch)
+# 🩺 Breast Cancer Histopathology Classification
 
-This project implements a binary image classifier using ResNet-50 (a deep convolutional neural network pre-trained on ImageNet) in PyTorch.
-It can be easily trained and tested locally on your machine using VS Code or any Python IDE.
+An AI-powered web application and PyTorch training pipeline for classifying breast cancer histopathology images using a fine-tuned ResNet-50 architecture.
 
+## 🚀 Overview
+This project uses Deep Learning (ResNet-50 pre-trained on ImageNet) to analyze breast histopathology images and predict whether they indicate **Benign** or **Malignant** tissue. It includes a complete training pipeline and a user-friendly frontend powered by Streamlit.
 
+## 📊 Dataset
+This project uses the **Breast Histopathology Images** dataset from Kaggle. 
+* **Download here:** [Breast Histopathology Images on Kaggle](https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images)
+* **Setup:** Download the dataset, extract the archive, and place the contents into an `archive/` directory in the root of this project. (The `archive/` folder is intentionally ignored by git to save space).
 
-🚀 Features
+## 🛠️ Setup Instructions
 
-Transfer Learning using ResNet50 (pretrained on ImageNet)
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Madhu-014/Breast-Cancer-Histopathology.git
+cd Breast-Cancer-Histopathology
+```
 
-Supports binary classification
-
-Training & validation with progress tracking
-
-Model checkpointing (resnet50.pth auto-saves after training)
-
-Lightweight subset sampling for faster local runs
-
-Works seamlessly in VS Code or Jupyter Notebook
-
-
-🛠️ Setup Instructions
-1. Clone the Repository
-git clone https://github.com/<your-username>/resnet50-image-classification.git
-cd resnet50-image-classification
-
-2. Create and Activate a Virtual Environment
-🧩 On Windows:
+### 2. Create a Virtual Environment & Install Dependencies
+```bash
 python -m venv venv
-venv\Scripts\activate
-
-🧩 On macOS/Linux:
-python -m venv venv
-source venv/bin/activate
-
-3. Install Dependencies
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+```
 
+## ▶️ Usage
 
+### Training the Model
+To train the ResNet50 model from scratch on the dataset:
+```bash
+python src/train.py
+```
+*(This will save the trained weights to `models/resnet50.pth`)*
 
-▶️ How to Run the Project
-1. Start Training
-
-Run the following command from your project root:
-
-python train.py
-
-2. Monitor Output
-
-During training, you’ll see:
-
-Epoch progress bars via tqdm
-
-Loss and validation accuracy after each epoch
-
-Model saving message upon completion:
-
-💾 Model successfully saved at: ../models/resnet50.pth
+### Running the Web App
+To start the Streamlit web interface and test your model with uploaded images:
+```bash
+streamlit run app.py
+```
